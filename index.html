@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>1:8:1 Layout</title>
     <link rel="stylesheet" href="Style.css">
+    <style>
+        
+    </style>
 </head>
-<body>
-    <div class="sidebar" style="width:200px;" id="mySidebar">
-        <button class="closebutton"
-        onclick="menu_close()">Close &times;</button>
-        <a href="#" class="menuitems">Dashboard</a>
-        <a href="#" class="menuitems">Daily Report</a>
-        <a href="#" class="menuitems">Top Users</a>
-        <a href="#" class="menuitems">Change Password</a>
-        <a href="#" class="menuitems">Logout</a>
+<body class="bckg">
 
-      </div>
-      
-      <div class="main" style="margin-left:200px">
-      
-      <div class="teal">
-        <button class="" onclick="menu_open()">&#9776;</button>
-        <div class="container">
-          <h1>Physical Fitness Tracker</h1>
+    <div class="container">
+        <div class="sidebar-left">
+          <a href="#">Dashboard</a>
+          <a href="#">Daily Report</a>
+          <a href="#">Profile</a>
+          <a href="#">Change Password</a>
+          <a href="#">Logout</a>
         </div>
+        <div class="main-content">
+            
+            <h2>CalorieTrack</h1>
+            <h1>Welcome to AI FitTrack</h1>
+            <p>Track your daily calorie intake and burned calories with our AI-powered fitness assistant.</p>
+            <p>Enter the food items you've consumed, and our system will calculate your calorie intake.</p>
+            <p>Based on your activity, we suggest exercises to help you balance your fitness goals.</p>
+            <p>Monitor your daily progress and stay motivated on your journey to a healthier lifestyle!</p>
+        <a href="dashboard.html" class="btn">Get Started</a>
         </div>
-      </div>
-      
-      <script>
-      function menu_open() {
-        document.getElementById("mySidebar").style.display = "block";
-      }
-      
-      function menu_close() {
-        document.getElementById("mySidebar").style.display = "none";
-      }
-      </script>
+        <div class="sidebar-right">
+            <div class="top">Progress bar</div>
+            <div class="bottom">Tasks</div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,3 +1,99 @@
-.menu{
-    
+/* Reset Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  
 }
+
+/* Main Layout */
+
+
+/* Left Sidebar */
+/* Left Sidebar */
+.sidebar-left {
+  background-color: rgba(44, 62, 80, 0.9); /* Dark blue with transparency */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed; /* Keeps it fixed while scrolling */
+  left: 0;
+  top: 0;
+  width: 15%; /* Adjust as needed */
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Enables scrolling if content is too long */
+}
+
+/* Sidebar Links */
+.sidebar-left a {
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  transition: background 0.2s;
+}
+
+.sidebar-left a:hover {
+  background-color: rgba(202, 182, 201, 0.7); /* Hover effect with transparency */
+  color: black;
+}
+
+/* Main Content */
+.main-content {
+  background-color: rgba(135, 140, 139, 0.6); /* Light transparent background */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: 24px;
+  font-weight: bold;
+  
+  /* Adjust margins to fit between the sidebars */
+  margin-left: 15%;  /* Same as .sidebar-left width */
+  margin-right: 15%; /* Same as .sidebar-right width */
+  padding: 20px;
+  /* Ensures content takes full width minus the sidebars */
+  min-height: 200vh; /* Full height */
+}
+
+
+/* Right Sidebar */
+.sidebar-right {
+  background-color: rgba(44, 62, 80, 0.7); /* Dark blue with transparency */
+  color: white;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  position: fixed; /* Keeps it fixed while scrolling */
+  right: 0;
+  top: 0;
+  width: 25%; /* Adjust as needed */
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Enables scrolling if content is too long */
+}
+
+/* Right Sidebar Sections */
+.sidebar-right .top,
+.sidebar-right .bottom {
+  background-color: rgba(190, 192, 195, 0.7); /* Slightly lighter with transparency */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+body {
+  background-image: url("img/pexels-willpicturethis-1954524.jpg");
+  background-size: cover; /* Ensures the image covers the entire page */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps background fixed while scrolling */
+}
+.main-content h2{
+  margin-top: 1px;
+} 
