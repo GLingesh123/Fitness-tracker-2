@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("img/pexels-willpicturethis-1954524.jpg") no-repeat center center fixed;
+      background-size: cover;
+      overflow-y: auto;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(26, 26, 46, 0.7); /* Semi-transparent background */
+      color: #77e4ee;
+      padding: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative; /* Sits above the background */
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(138, 209, 205, 0.1);
+    }
+    header img {
+      height: 50px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background-image: url("img/pexels-willpicturethis-1954524.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 80px 20px;
+      color: #ffcc00;
+      text-align: center;
+      z-index: 1;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+      z-index: -1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      color: #ffcc00;
+    }
+    .hero .center-text {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .hero .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .hero .btn {
+      background-color: #d54b4b;
+      color: #ffffff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.9s;
+    }
+    .hero .btn:hover {
+      background-color: #49cd50;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #afdbd3;
+    }
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    /* Features - Flex Layout */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .feature-box {
+      flex: 1 1 250px;  /* Flex items take at least 250px and wrap as needed */
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-box h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #1a1a2e;
+    }
+    .feature-box p {
+      font-size: 16px;
+      color: #666;
+    }
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+      .hero .center-text {
+        font-size: 18px;
+      }
+      .hero .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+      }
+      /* Flex columns stack vertically on small screens */
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo2.png" alt="Fit Journey Logo"> 
+    Fit Journey
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Track Your Fitness Goals with <span>AI</span></h1>
+      <p class="center-text">Set your daily fitness goals, predict calories, and receive smart workout recommendations based on your health condition and diet.</p>
+      <div class="btn-container">
+        <a href="login.php"><button class="btn btn-login">Login</button></a>
+        <a href="login.php"><button class="btn btn-register">Register</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>How It Works</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>📊 Predict Calories</h3>
+        <p>Enter your activity and let our AI predict how many calories you burn daily.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🏋️ Workout Plans</h3>
+        <p>Personalized workouts based on your age and health condition.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🍎 Food Intake</h3>
+        <p>Track your meals and adjust daily goals accordingly.</p>
+      </div>
+      <div class="feature-box">
+        <h3>⏰ Daily Reminders</h3>
+        <p>Receive email reminders for pending workouts to stay on track.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

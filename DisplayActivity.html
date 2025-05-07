@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Summary</title>
+  <style>
+    /* Global Styling */
+    body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("img/pexels-willpicturethis-1954524.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+}
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #444;
+      font-size: 2em;
+    }
+
+    /* Card Container Styling */
+    #activitySummary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    /* Individual activity card styling */
+    .activity-card {
+      background: #f9f9ff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 240px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .activity-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .activity-image {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card-detail {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    /* Button styling */
+    #predictCalories {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      border: none;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background 0.3s ease;
+    }
+
+    #predictCalories:hover {
+      background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Activity Summary</h1>
+    <div id="activitySummary"></div>
+    <button id="predictCalories">Predict Calories</button>
+  </div>
+
+  <script>
+    // Retrieve the activity data from sessionStorage
+    const storedData = sessionStorage.getItem('activityData');
+    let activityData = [];
+    if (storedData) {
+      activityData = JSON.parse(storedData);
+    }
+
+    // Function to return an icon URL based on activity type
+    function getImage(activityType) {
+      const imageMapping = {
+        "Walking": "https://img.icons8.com/color/96/000000/walking.png",
+        "Running": "https://img.icons8.com/color/96/000000/running.png",
+"Cycling": "https://img.icons8.com/fluency/96/000000/bicycle.png",
+        "Swimming": "https://img.icons8.com/color/96/000000/swimming.png",
+        "Gym": "https://img.icons8.com/color/96/000000/dumbbell.png"
+      };
+      return imageMapping[activityType] || "https://img.icons8.com/color/96/000000/activity-history.png";
+    }
+
+    // Function to retrieve the unit based on activity type
+    function getUnit(activityType) {
+      const mapping = {
+        "Walking": "steps",
+        "Running": "kms",
+        "Cycling": "kms",
+        "Swimming": "mins",
+        "Gym": "mins"
+      };
+      return mapping[activityType] || "";
+    }
+
+    // Function to display the submitted activity data as stylish cards
+    function displayActivityData() {
+      const summaryDiv = document.getElementById("activitySummary");
+      summaryDiv.innerHTML = "";
+      if (activityData.length === 0) {
+        summaryDiv.innerText = "No activity data available.";
+        return;
+      }
+      activityData.forEach(entry => {
+        // Create a card for each activity entry
+        const card = document.createElement("div");
+        card.className = "activity-card";
+        const imageSrc = getImage(entry.activityType);
+        card.innerHTML = `
+          <img src="${imageSrc}" class="activity-image" alt="${entry.activityType} image">
+          <div class="card-title">${entry.activityType}</div>
+          <div class="card-detail"><strong>Quantity:</strong> ${entry.quantity}</div>
+          <div class="card-detail"><strong>Unit:</strong> ${getUnit(entry.activityType)}</div>
+        `;
+        summaryDiv.appendChild(card);
+      });
+    }
+
+    displayActivityData();
+
+    // Handle click on the Predict Calories button
+    
+  </script>
+</body>
+</html>

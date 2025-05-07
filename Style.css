@@ -1,0 +1,95 @@
+/*-----------------------------
+  Basic Reset & Global Styles
+-----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("img/pexels-willpicturethis-1954524.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Wrapper to handle scrolling of content while background stays fixed */
+.wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden; /* Prevents side-scrolling */
+}
+
+
+
+
+/* Enable scrolling only for content */
+.scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  max-height: calc(100vh - 40px); /* Prevents overflowing */
+}
+
+
+/* Activity Entry Styling */
+.activity-entry {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+}
+
+.activity-entry:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Labels */
+.activity-entry label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Dropdown Select Styling */
+.activity-entry select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.activity-entry select:focus {
+  border-color: #8b73f7;
+  outline: none;
+}
+
+/* Input Field */
+.activity-entry input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(219, 233, 169, 0.2);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.activity-entry input[type="number"]:focus {
+  border-color: #8b73f7;
+  outline: none;
+  background: rgba(219, 233, 169, 0.4);
+}
